@@ -1,6 +1,6 @@
 export const globalLinks = (idCode) =>{
   let idCod = idCode.replace('-','').toLowerCase();
-  return globalObj = {
+  const globalObj = {
   "Jav GG": `https://javgg.me/?s=${idCode}`,
   "Arc Jav" : `https://arcjav.com/?s=${idCode}`,  
   "Jav Trailer": `https://javtrailers.com/search/${idCode}`,
@@ -12,5 +12,10 @@ export const globalLinks = (idCode) =>{
   "HP Jav": `https://hpjav.tv?s=${idCode}`,
   "R18" : `https://www.r18.com/common/search/searchword=${idCode}/`
   }
+  let links = '';
+  Object.keys(globalObj).map(key=>{
+      links +=` <a href="${globalObj[key]}" class="badge mr-2 badge-light" target="_blank">${key}</a></p>`
+  });
+    return links;
 }
      
